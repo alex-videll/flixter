@@ -1,3 +1,3 @@
 class Lesson < ApplicationRecord
-	belongs_tp :section
+	belongs_to :section
 end
