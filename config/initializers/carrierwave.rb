@@ -1,4 +1,6 @@
 CarrierWave.configure do |config|
+  config.directory_permissions = 0777
+  	config.permissions = 0666
   config.fog_provider = 'fog/aws'
   config.fog_directory  = ENV["AWS_BUCKET"]                        # required
   config.fog_credentials = {
