@@ -4,16 +4,16 @@ class LessonsController < ApplicationController
   
 
 	def show
-		@lesson = current_lesson.section.course
+		@lesson = Lesson.new
 	end
 
 	private
 
 	def require_authorized_for_current_lesson
     	if current_user.enrolled_in?(course)
-    		return true
+    		return redirect_to lesson_path(current_lesson.section.course)
         else 
-        	redirect_to course_path, alert: 'Please enroll in this course to view lessons'
+        	return redirect_to courses_path, alert: 'Please enroll in this course to view lessons'
     	end
   	end
 
