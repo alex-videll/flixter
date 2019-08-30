@@ -43,7 +43,7 @@
                   data-locale="auto"></script>
         <% end %>
       <% end %>
-    <% end %>
+      <% end %>
   <% else %>
     <h3 class="badge badge-info">Sign In to Enroll!</h3>
 	  </div>
@@ -61,7 +61,7 @@
   					<%= section.title %>
   				</h3>
   				<div class="row">
-  				<% section.lessons.each do |lesson| %>
+  				<% section.lessons.rank(:row_order).each do |lesson| %>
   					<div class="col-12 col-sm-6">
   					<div class="lesson text-center">
   						<br />
@@ -71,8 +71,8 @@
   						<%= lesson.subtitle %>
   					  <% end %>
   					</div>
-  				  </div>
-  				<% end %>
+  				</div>
+  			<% end %>
   			</div>
   			 <br class="clr" />
   		  </div>
